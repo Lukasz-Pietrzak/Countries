@@ -1,0 +1,199 @@
+html {
+	min-width: 866px;
+}
+
+body {
+	background-color: #1C2833;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+#container {
+	width: auto;
+	height: auto;
+}
+
+h1 {
+	text-align: center;
+	font-size: 55px;
+	color: dodgerblue;
+	font-family: 'Rajdhani', sans-serif;
+	transform-origin: bottom;
+	transform: translateY(100%) scale(0.5);
+	;
+	animation: animacja-tekstu 1s forwards;
+}
+
+@keyframes animacja-tekstu {
+	to {
+		transform: translateY(0%) scale(1);
+	}
+}
+
+#gallery {
+	text-align: center;
+}
+
+.picture {
+	transition: all 0.5s ease-out;
+	width: 800px;
+	height: 600px;
+}
+
+#picture1-img:hover {
+	transform: scale(0.85);
+	transition: all 0.5s ease-out;
+}
+
+#picture2-img:hover {
+	transform: rotate(7deg);
+	transition: all 0.5s ease-out;
+}
+
+#picture3 {
+	position: relative;
+	display: inline-block;
+	white-space: nowrap;
+}
+
+#picture3-tekst {
+	padding: 10px;
+	width: 800px;
+	/* Jest to szerokość obrazu, bez niewidocznych pikseli */
+	opacity: 70%;
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
+	bottom: 0;
+	color: white;
+	font-size: 54px;
+	z-index: 100;
+	background-color: black;
+	opacity: 0;
+	transition: all 0.5s ease-out;
+}
+
+#picture3:hover #picture3-tekst {
+	transition: all 0.5s ease-out;
+	opacity: 70%;
+	animation: fade-in 0.7s ease-in-out;
+}
+
+@keyframes fade-in {
+	0% {
+		opacity: 0;
+		bottom: 8px;
+	}
+
+	60% {
+		opacity: 0.7;
+		bottom: 60px;
+	}
+
+}
+
+#picture4 > .picture {
+	opacity: 100%;
+}
+
+#picture4 {
+	position: relative;
+	display: inline-block;
+	background-color: #43CB9E;
+}
+
+
+#lupa {
+	position: absolute;
+	bottom: 70%;
+	left: 35%;
+	transform: translateX(-50%);
+	width: 30%;
+	visibility: hidden;
+}
+
+#picture4:hover > #lupa {
+	visibility: visible;
+	/*	animation: picture-lupa 1s ease-in-out;*/
+	animation: picture-lupa 1s ease-in-out, picture-lupa-left 1s ease-in-out 1s forwards;
+	animation-fill-mode: forwards;
+}
+
+@keyframes picture-lupa {
+	to {
+		bottom: 35%;
+	}
+
+}
+
+@keyframes picture-lupa-left {
+	to {
+		left: 50%;
+	}
+}
+
+
+#picture4-text {
+	position: absolute;
+	bottom: 5%;
+	left: 50%;
+	transform: translateX(-50%);
+	color: white;
+	font-size: 35px;
+	font-weight: 900;
+	visibility: hidden;
+}
+
+#picture4:hover > .picture:hover {
+	opacity: 70%;
+	transition: all 0.5s ease-out;
+}
+
+#picture4:hover > #picture4-text {
+	visibility: visible;
+	animation: picture-text 1s ease-in-out;
+	animation-fill-mode: forwards;
+}
+
+@keyframes picture-text {
+	to {
+		bottom: 35%;
+
+	}
+}
+
+
+#picture1,
+#picture2,
+#picture3,
+#picture4,
+#picture5,
+#picture6 {
+	width: 800px;
+	height: 600px;
+	display: inline-block;
+	margin: 11px;
+}
+
+#picture5, #picture6 {
+	overflow: hidden;
+}
+
+#picture5{
+	
+}
+
+#picture5-img:hover {
+	transform: scale(1.2) rotate(-5deg);
+}
+
+#picture6-img {}
+
+#picture6-img:hover {
+	transform: scale(1.2);
+	
+}
